@@ -1,52 +1,25 @@
-import { Card, Layout, Typography, message, Popconfirm } from "antd";
-import { mockRaffles } from "../../constants/mockData";
-import Image from "next/image";
-import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
-import Link from "next/link";
+import { Layout, Typography } from "antd";
+import { Raffle } from "../../types/raffle";
+import { RaffleCard } from "./RaffleCard";
 
-const { Meta } = Card;
 const { Title } = Typography;
 
-export const RaffleView = ({ id }: { id: string | string[] | undefined }) => {
-  if (typeof id !== "string") {
-    return null;
-  }
-  const { title, url, product, description } = mockRaffles[id];
+type Props = {
+  raffle: Raffle;
+  id: string;
+};
 
-  const confirm = (e?: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
-    message.success("Deleted");
-  };
+export const RaffleView = ({ raffle }: Props) => {
+  const { name } = raffle || {};
 
-  const cancel = (e?: React.MouseEvent<HTMLElement>) => {
-    console.log(e);
+  const handleOnDelete = (id: string) => {
+    console.log("deleted");
   };
 
   return (
     <Layout style={{ display: "flex", alignItems: "center" }}>
-      <Title level={2}>{title}</Title>
-      <Card
-        style={{ width: 200 }}
-        cover={<Image src={url} alt={title} width={200} height={200} />}
-        actions={[
-          <Link key="edit" href={`/raffles/${id}/edit`}>
-            <EditOutlined key="edit" />
-          </Link>,
-          <Popconfirm
-            key="delete"
-            title="Delete the task"
-            description="Are you sure to delete this raffle?"
-            onConfirm={confirm}
-            onCancel={cancel}
-            okText="Yes"
-            cancelText="No"
-          >
-            <DeleteOutlined key="delete" />
-          </Popconfirm>,
-        ]}
-      >
-        <Meta title={product} description={description} />
-      </Card>
+      <Title level={2}>{name}</Title>
+      <RaffleCard raffle={raffle} onDelete={handleOnDelete} />
     </Layout>
   );
 };

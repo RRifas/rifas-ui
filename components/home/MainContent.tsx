@@ -1,4 +1,5 @@
 import { Layout, theme } from "antd";
+import Link from "next/link";
 
 const { Content } = Layout;
 
@@ -16,6 +17,14 @@ export const MainContent = () => {
         }}
       >
         Welcome to Rifas
+        <ul>
+          <li>
+            <Link href="/raffles">View Raffles</Link>
+          </li>
+          <li>
+            <Link href="/raffles/create">Create a new Raffle</Link>
+          </li>
+        </ul>
       </div>
     </Content>
   );

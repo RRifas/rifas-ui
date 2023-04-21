@@ -1,8 +1,10 @@
 export type Raffle = {
   id: string;
-  title: string;
-  product: string;
+  name: string;
   description: string;
-  url: string;
+  goal: number;
   price: number;
+  tickets_sold: number;
+  imagen?: string;
+  url?: string;
 };

@@ -1,11 +1,33 @@
 import { useRouter } from "next/router";
-import { Typography } from "antd";
 import { RaffleView } from "../../../components/raffles/RaffleView";
+import { Raffle } from "../../../types/raffle";
+import { getRaffleById } from "../../api/raffle";
 
-const { Title } = Typography;
+type Props = {
+  data: Raffle;
+  raffleId: string;
+};
 
-export default function Raffle() {
+export default function RaffleById({ data, raffleId }: Props) {
   const router = useRouter();
-  const { raffleId } = router.query;
-  return <RaffleView id={raffleId} />;
+  if (!data) {
+    router.push("/");
+    return null;
+  }
+  return <RaffleView raffle={data} id={raffleId} />;
+}
+
+export async function getServerSideProps({
+  query,
+}: {
+  query: { raffleId: string };
+}) {
+  const { raffleId } = query;
+  if (!raffleId) {
+    return {};
+  }
+  const raffle = await getRaffleById(raffleId);
+  return {
+    props: { data: raffle, raffleId },
+  };
 }
