@@ -10,13 +10,17 @@ export const RaffleList = ({ data }: { data: Raffle[] }) => {
   };
   return (
     <div style={{ padding: "30px" }}>
-      <Row gutter={[16, 16]}>
-        {raffles.map((raffle) => (
-          <Col key={raffle.id} span={4}>
-            <RaffleCard raffle={raffle} onDelete={handleOnDelete} />
-          </Col>
-        ))}
-      </Row>
+      {raffles ? (
+        <Row gutter={[16, 16]}>
+          {raffles.map((raffle) => (
+            <Col key={raffle.id} span={4}>
+              <RaffleCard raffle={raffle} onDelete={handleOnDelete} />
+            </Col>
+          ))}
+        </Row>
+      ) : (
+        <div> No data </div>
+      )}
     </div>
   );
 };
