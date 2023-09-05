@@ -1,6 +1,6 @@
 import { RaffleList } from "../../components/raffles/RaffleList";
 import { Raffle } from "../../types/raffle";
-import { getRaffles } from "../api/raffle";
+import { getRaffles } from "../../api/raffle";
 
 type Props = {
   data: Raffle[];

@@ -1,7 +1,7 @@
 import { DollarOutlined, PlusOutlined } from "@ant-design/icons";
 import { Form, Input, Button, DatePicker, InputNumber, Upload } from "antd";
 import { useRouter } from "next/router";
-import { updateRaffle } from "../../pages/api/raffle";
+import { updateRaffle } from "../../api/raffle";
 import { Raffle } from "../../types/raffle";
 
 const { TextArea } = Input;

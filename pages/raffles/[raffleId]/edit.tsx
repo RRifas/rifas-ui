@@ -3,7 +3,7 @@ import { Col, Layout, Row, Typography } from "antd";
 import Link from "next/link";
 import { EditForm } from "../../../components/form/EditForm";
 import { Raffle } from "../../../types/raffle";
-import { getRaffleById } from "../../api/raffle";
+import { getRaffleById } from "../../../api/raffle";
 
 const { Title } = Typography;
 

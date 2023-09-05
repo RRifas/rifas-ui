@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { RaffleView } from "../../../components/raffles/RaffleView";
 import { Raffle } from "../../../types/raffle";
-import { getRaffleById } from "../../api/raffle";
+import { getRaffleById } from "../../../api/raffle";
 
 type Props = {
   data: Raffle;

@@ -3,7 +3,7 @@ import { Card, Image, Popconfirm, message } from "antd";
 import Link from "next/link";
 import { Raffle } from "../../types/raffle";
 import { defaultImageUrl } from "../../constants/raffle";
-import { deleteRaffle } from "../../pages/api/raffle";
+import { deleteRaffle } from "../../api/raffle";
 
 export const RaffleCard = ({
   raffle,

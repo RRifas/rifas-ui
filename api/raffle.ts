@@ -1,5 +1,5 @@
-import { Raffle } from "../../types/raffle";
-import { create, fetcher, remove, update } from "../../utils/fetcher";
+import { Raffle } from "../types/raffle";
+import { create, fetcher, remove, update } from "../utils/fetcher";
 
 export const getRaffles = async () => {
   try {

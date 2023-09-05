@@ -2,7 +2,7 @@ import { DollarOutlined, PlusOutlined } from "@ant-design/icons";
 import { Form, Input, Button, DatePicker, InputNumber, Upload } from "antd";
 import { useRouter } from "next/router";
 import { Raffle } from "../../types/raffle";
-import { createRaffle } from "../../pages/api/raffle";
+import { createRaffle } from "../../api/raffle";
 import React from "react";
 
 const { TextArea } = Input;

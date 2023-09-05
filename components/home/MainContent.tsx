@@ -19,7 +19,10 @@ export const MainContent = () => {
         Welcome to Rifas
         <ul>
           <li>
-            <Link href="/raffles">View Raffles</Link>
+            <Link href="/raffles">All Raffles</Link>
+          </li>
+          <li>
+            <Link href="/raffles">My Raffles</Link>
           </li>
           <li>
             <Link href="/raffles/create">Create a new Raffle</Link>
